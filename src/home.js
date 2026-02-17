@@ -1,9 +1,52 @@
-function home() {
+import React from 'react';
+
+function Home() {
     return (
-        <div>
-            <h1>Home</h1>
-            <p>Welcome to service hub</p>
+        <div className="site">
+            <nav className="site-nav">
+                <div className="brand">ServiceHub</div>
+                <ul className="nav-links">
+                    <li>Home</li>
+                    <li>Features</li>
+                    <li>Docs</li>
+                </ul>
+            </nav>
+
+            <main className="hero">
+                <div className="hero-content">
+                    <h1>Manage services effortlessly</h1>
+                    <p className="lead">Centralize requests, track progress, and delight customers.</p>
+                    <div className="actions">
+                        <button className="btn btn-primary">Get started</button>
+                        <button className="btn">View docs</button>
+                    </div>
+                </div>
+                <div className="hero-visual" aria-hidden>
+                    <div className="placeholder-illustration">🚀</div>
+                </div>
+            </main>
+
+            <section className="features">
+                <h2 className="section-title">Why ServiceHub</h2>
+                <div className="feature-grid">
+                    <div className="card">
+                        <h3>Fast setup</h3>
+                        <p>Get up and running in minutes with sensible defaults.</p>
+                    </div>
+                    <div className="card">
+                        <h3>Real-time updates</h3>
+                        <p>Keep stakeholders informed with live status and notifications.</p>
+                    </div>
+                    <div className="card">
+                        <h3>Secure</h3>
+                        <p>Role-based access and audit logs for enterprise needs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer className="site-footer">© {new Date().getFullYear()} ServiceHub</footer>
         </div>
     );
 }
-export default home;
+
+export default Home;
