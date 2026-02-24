@@ -1,25 +1,19 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Home() {
     return (
         <div className="site">
             <nav className="site-nav">
                 <div className="brand">ServiceHub</div>
-                <ul className="nav-links">
-                    <li>Home</li>
-                    <li>Features</li>
-                    <li>Docs</li>
-                </ul>
+                
             </nav>
 
             <main className="hero">
                 <div className="hero-content">
                     <h1>Manage services effortlessly</h1>
                     <p className="lead">Centralize requests, track progress, and delight customers.</p>
-                    <div className="actions">
-                        <button className="btn btn-primary">Get started</button>
-                        <button className="btn">View docs</button>
-                    </div>
+                    
                 </div>
                 <div className="hero-visual" aria-hidden>
                     <div className="placeholder-illustration">🚀</div>
@@ -42,9 +36,12 @@ function Home() {
                         <p>Role-based access and audit logs for enterprise needs.</p>
                     </div>
                 </div>
-            </section>
-
-            <footer className="site-footer">© {new Date().getFullYear()} ServiceHub</footer>
+            </section>       
+             <footer className="site-footer">© {new Date().getFullYear()} ServiceHub</footer> 
+             <div>
+                <Link to="/service">Click to see available services</Link>
+                
+             </div>   
         </div>
     );
 }
