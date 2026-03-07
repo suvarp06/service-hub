@@ -5,8 +5,7 @@ function Home() {
     return (
         <div className="site">
             <nav className="site-nav">
-                <div className="brand">ServiceHub</div>
-                
+                <div className="brand">ServiceHub</div>  
             </nav>
 
             <main className="hero">
@@ -15,9 +14,7 @@ function Home() {
                     <p className="lead">Centralize requests, track progress, and delight customers.</p>
                     
                 </div>
-                <div className="hero-visual" aria-hidden>
-                    <div className="placeholder-illustration">🚀</div>
-                </div>
+                
             </main>
 
             <section className="features">

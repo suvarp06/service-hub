@@ -1,6 +1,9 @@
 import './App.css';
 import Home from './home';
-import { Service, Login, Dashboard} from './serv';
+import Service from './serv';
+import Login from './login';
+import Dashboard from './dashboard';
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {

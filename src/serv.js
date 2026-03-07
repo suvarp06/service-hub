@@ -1,13 +1,32 @@
-import React, { useState } from "react";
+import React, { useState,useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Login from "./login";
 
 function Service(){
+    const scrollRef = useRef(null);
+    useEffect(() => {
+        const container = scrollRef.current;
+        const scrollInterval = setInterval(() => {
+            if(container){
+            container.scrollTop += 1;
+
+            if (container.scrollTop >= container.scrollHeight - container.clientHeight){
+                container.scrollTop=0;
+            }
+            }
+        }, 30);
+        return () => clearInterval(scrollInterval); 
+    }, []);
     return(
+
         <section className="features">
-                <h2 className="section-title">available services</h2>
-                <div className="feature-grid">
+             <div className="main-container">
+                <div className="service-section">
+                    <h2> AVAILABLE SERVICES</h2>
+                < div ref={scrollRef} className="scroll-box">
+                
                     <div className="card">
                         <h3>Plumbing</h3>
                         <p>Installation and repair of water pipes,taps and drainage systems to ensure proper water flow and prevent leakage problems.</p>
@@ -32,53 +51,14 @@ function Service(){
                         <h3>Gardening</h3>
                         <p>Includes lawn maintenance,plant care,trimming and landscaping to maintain outdoor space.</p>
                     </div>
-                    <Link to="/login">Login</Link>
+                </div>  
                 </div>
+                <div classname="login-section">
+                <Login/>
+                </div>
+                </div>
+                
         </section>
    );
 }
-
-function Login(){
-    const [username, setUsername] = useState("")
-    const navigate = useNavigate();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-            navigate("/dashboard",{state: {username:username}});
-    };
-    return(
-        <div className="login-container">
-            <div className="login-box">
-            <h6>Login page</h6>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="enter username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <br/><br/>
-
-                <button type="submit">Submit</button>
-            </form>   
-            </div>
-        </div>
-    );
-}
-
-function Dashboard(){
-    const location = useLocation();
-    const username = location.state?.username;
-    const navigate = useNavigate();
-    return(
-        <div>
-            <h2>
-                <h2>WELCOME {username} </h2>
-            </h2>
-            <button type="button" onClick={() => window.location.href = "/"}>Logout</button>
-            <button type="button" onClick={() => navigate(-1)}>Back</button>
-        </div>
-    );
-}
-
-export{ Service, Login, Dashboard };
+export default Service;
