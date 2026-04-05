@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import Service from './serv';
 function Dashboard(){
     const location = useLocation();
     const username = location.state?.username;
@@ -11,6 +11,7 @@ function Dashboard(){
             <button type="button" onClick={() => window.location.href = "/"}>Logout</button>
             <button type="button" onClick={() => navigate(-1)}>Back</button>
         </div>
+       
     );
 }
 

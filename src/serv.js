@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import Login from "./login";
+import Dashboard from './dashboard';
 
 function Service(){
     const scrollRef = useRef(null);
@@ -19,6 +19,7 @@ function Service(){
     return(
 
         <section className="features">
+            <Dashboard />
              <div className="main-container">
                 <div className="service-section">
                     <h2> AVAILABLE SERVICES</h2>
@@ -38,7 +39,7 @@ function Service(){
                     </div>
                     <div className="card">
                         <h3>Electrical</h3>
-                        <p>Maintenance of electrical wiring,switchs,poer sockets and other electrical appliances.</p>
+                        <p>Maintenance of electrical wiring,switchs,poor sockets and other electrical appliances.</p>
                     </div>
                     <div className="card">
                         <h3>Appliances</h3>
@@ -50,9 +51,7 @@ function Service(){
                     </div>
                 </div>  
                 </div>
-                <div classname="login-section">
-                <Login/>
-                </div>
+                
                 </div>
                 
         </section>

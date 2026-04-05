@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import Login from "./login";
 function Home() {
     return (
         <div className="site">
@@ -33,12 +33,12 @@ function Home() {
                         <p>Role-based access and audit logs for enterprise needs.</p>
                     </div>
                 </div>
+                <div className="login-section">
+                    <Login />
+                </div>
             </section>       
              <footer className="site-footer">© {new Date().getFullYear()} ServiceHub</footer> 
-             <div>
-                <Link to="/service">Click to see available services</Link>
-                
-             </div>   
+             
         </div>
     );
 }
